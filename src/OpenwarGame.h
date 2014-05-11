@@ -2,6 +2,8 @@
 
 #include "gameplay.h"
 
+class HWResManager;
+
 using namespace gameplay;
 
 /**
@@ -9,6 +11,15 @@ using namespace gameplay;
  */
 class OpenwarGame: public Game
 {
+// members
+protected:
+	HWResManager* hardwarResManager;
+
+private:
+	Scene* _scene;
+	bool _wireframe;
+
+// functions
 public:
 
 	/**
@@ -54,7 +65,4 @@ private:
      * Draws the scene each frame.
      */
     bool drawScene(Node* node);
-
-    Scene* _scene;
-    bool _wireframe;
 };

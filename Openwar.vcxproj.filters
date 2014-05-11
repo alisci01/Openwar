@@ -8,6 +8,9 @@
     <Filter Include="res\shaders">
       <UniqueIdentifier>{f54d3628-f193-4138-97ca-0ca3b34480d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ResourceManagement">
+      <UniqueIdentifier>{23ab1331-c367-4c28-b113-efe670ad809f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="game.config" />
@@ -78,10 +81,28 @@
     <ClInclude Include="src\OpenwarGame.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\ResourceManagement\HWResManager.h">
+      <Filter>src\ResourceManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResourceManagement\HWResource.h">
+      <Filter>src\ResourceManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResourceManagement\HWResFile.h">
+      <Filter>src\ResourceManagement</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OpenwarGame.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceManagement\HWResManager.cpp">
+      <Filter>src\ResourceManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceManagement\HWResource.cpp">
+      <Filter>src\ResourceManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceManagement\HWResFile.cpp">
+      <Filter>src\ResourceManagement</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

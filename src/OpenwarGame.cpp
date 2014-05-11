@@ -1,4 +1,5 @@
 #include "OpenwarGame.h"
+#include "ResourceManagement/HWResManager.h"
 
 // Declare our game instance
 OpenwarGame game;
@@ -10,6 +11,8 @@ OpenwarGame::OpenwarGame()
 
 void OpenwarGame::initialize()
 {
+	hardwarResManager = new HWResManager(".");
+
     // Load game scene from file
     _scene = Scene::load("res/demo.scene");
 
@@ -25,6 +28,7 @@ void OpenwarGame::initialize()
 void OpenwarGame::finalize()
 {
     SAFE_RELEASE(_scene);
+	delete hardwarResManager;
 }
 
 void OpenwarGame::update(float elapsedTime)

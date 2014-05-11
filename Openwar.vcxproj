@@ -345,9 +345,15 @@ xcopy GamePlay\gameplay\res\ui res\ui\* /s /y /d</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OpenwarGame.cpp" />
+    <ClCompile Include="src\ResourceManagement\HWResFile.cpp" />
+    <ClCompile Include="src\ResourceManagement\HWResManager.cpp" />
+    <ClCompile Include="src\ResourceManagement\HWResource.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\OpenwarGame.h" />
+    <ClInclude Include="src\ResourceManagement\HWResFile.h" />
+    <ClInclude Include="src\ResourceManagement\HWResManager.h" />
+    <ClInclude Include="src\ResourceManagement\HWResource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
