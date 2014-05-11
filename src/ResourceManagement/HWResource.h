@@ -14,6 +14,7 @@ public:
 	std::string	Name;
 
 protected:
+	HWResFile*	m_resFile;
 	uint32_t	m_offset;
 	uint32_t	m_size;
 	char*		m_data;
