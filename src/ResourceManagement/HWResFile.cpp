@@ -1,4 +1,6 @@
 #include "HWResFile.h"
+#include "Resources/HWPalette.h"
+#include "Resources/HWSprTexture.h"
 #include "Stream.h"
 
 typedef struct
@@ -45,7 +47,23 @@ HWResFile::HWResFile(Stream* stream)
 		}
 
 		HWResource res(this, record.flags, record.offset, record.size, name);
-		m_fileMap[name] = res;
+		HWResource* resPtr = nullptr;
+		auto resType = res.getResourceType();
+		switch (resType)
+		{
+		case HWResource::HWResourceType::PAL:
+			resPtr = new HWPalette(res);
+			break;
+		case HWResource::HWResourceType::SPR:
+			resPtr = new HWSprTexture(res);
+			break;
+		default:
+			resPtr = new HWResource(res);
+			break;
+		}
+		// TODO is is temporary
+		resPtr->loadResource();
+		m_fileMap[name] = resPtr;
 	}
 
 	delete[] fileRecords;
@@ -58,4 +76,11 @@ HWResFile::HWResFile()
 HWResFile::~HWResFile()
 {
 	m_resFileStream->close();
+}
+
+void HWResFile::readData(unsigned char* dest, uint32_t offset, uint32_t size)
+{
+	m_resFileStream->seek(offset, SEEK_SET);
+	m_resFileStream->read(dest, sizeof(unsigned char), size);
+	m_resFileStream->seek(0, SEEK_SET);
 }

@@ -11,6 +11,9 @@
     <Filter Include="src\ResourceManagement">
       <UniqueIdentifier>{23ab1331-c367-4c28-b113-efe670ad809f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ResourceManagement\Resources">
+      <UniqueIdentifier>{b76f9f93-812b-49f7-8ccd-5240e6551a50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="game.config" />
@@ -90,6 +93,12 @@
     <ClInclude Include="src\ResourceManagement\HWResFile.h">
       <Filter>src\ResourceManagement</Filter>
     </ClInclude>
+    <ClInclude Include="src\ResourceManagement\Resources\HWSprTexture.h">
+      <Filter>src\ResourceManagement\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResourceManagement\Resources\HWPalette.h">
+      <Filter>src\ResourceManagement\Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OpenwarGame.cpp">
@@ -103,6 +112,12 @@
     </ClCompile>
     <ClCompile Include="src\ResourceManagement\HWResFile.cpp">
       <Filter>src\ResourceManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceManagement\Resources\HWSprTexture.cpp">
+      <Filter>src\ResourceManagement\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourceManagement\Resources\HWPalette.cpp">
+      <Filter>src\ResourceManagement\Resources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
