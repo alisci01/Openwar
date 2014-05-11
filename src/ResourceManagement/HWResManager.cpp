@@ -32,7 +32,7 @@ HWResManager::HWResManager(const char* basePath)
 			if (iequals(fileExt, resExt))
 			{
 				auto fileStream = FileSystem::open(filePath.c_str());
-				m_resFileMap[filePath] = HWResFile(fileStream);
+				m_resFileMap[FileSystem::getFileNameWithoutExtension(filePath.c_str())] = HWResFile(fileStream);
 			}
 		}
 	}
