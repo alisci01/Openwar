@@ -40,7 +40,7 @@ HWResFile::HWResFile(Stream* stream)
 		for (int j = 0; j < 16; j++)
 		{
 			char decodedChar = fileRecords[i].name[j] ^ XorString[j];
-			if (decodedChar != ' ' || decodedChar != '\0')
+			if (decodedChar != ' ' && decodedChar != '\0')
 				name.append(1, decodedChar);
 		}
 
