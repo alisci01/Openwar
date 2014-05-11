@@ -1,5 +1,4 @@
-#ifndef OpenwarGame_H_
-#define OpenwarGame_H_
+#pragma once
 
 #include "gameplay.h"
 
@@ -12,42 +11,42 @@ class OpenwarGame: public Game
 {
 public:
 
-    /**
-     * Constructor.
-     */
+	/**
+	 * Constructor.
+	 */
     OpenwarGame();
 
-    /**
-     * @see Game::keyEvent
-     */
-	void keyEvent(Keyboard::KeyEvent evt, int key);
+	/**
+	 * @see Game::keyEvent
+	 */
+	void keyEvent(Keyboard::KeyEvent evt, int key) override;
 	
-    /**
-     * @see Game::touchEvent
-     */
-    void touchEvent(Touch::TouchEvent evt, int x, int y, unsigned int contactIndex);
+	/**
+	 * @see Game::touchEvent
+	 */
+	void touchEvent(Touch::TouchEvent evt, int x, int y, unsigned int contactIndex) override;
 
 protected:
 
-    /**
-     * @see Game::initialize
-     */
-    void initialize();
+	/**
+	 * @see Game::initialize
+	 */
+	void initialize() override;
 
-    /**
-     * @see Game::finalize
-     */
-    void finalize();
+	/**
+	 * @see Game::finalize
+	 */
+	void finalize() override;
 
-    /**
-     * @see Game::update
-     */
-    void update(float elapsedTime);
+	/**
+	 * @see Game::update
+	 */
+	void update(float elapsedTime) override;
 
-    /**
-     * @see Game::render
-     */
-    void render(float elapsedTime);
+	/**
+	 * @see Game::render
+	 */
+	void render(float elapsedTime) override;
 
 private:
 
@@ -59,5 +58,3 @@ private:
     Scene* _scene;
     bool _wireframe;
 };
-
-#endif
