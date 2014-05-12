@@ -53,6 +53,7 @@ HWResFile::HWResFile(Stream* stream)
 		{
 		case HWResource::HWResourceType::PAL:
 			resPtr = new HWPalette(res);
+			resPtr->loadResource();
 			break;
 		case HWResource::HWResourceType::SPR:
 			resPtr = new HWSprTexture(res);
@@ -61,8 +62,6 @@ HWResFile::HWResFile(Stream* stream)
 			resPtr = new HWResource(res);
 			break;
 		}
-		// TODO is is temporary
-		resPtr->loadResource();
 		m_fileMap[name] = resPtr;
 	}
 
